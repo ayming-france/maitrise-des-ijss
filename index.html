@@ -175,12 +175,12 @@
 
           .pressure-card.card-up { background: rgba(232,93,74,0.06); border: 1px solid rgba(232,93,74,0.15); }
           .pressure-card.card-up::before { background: linear-gradient(90deg, #e85d4a, #c0392b); }
-          .pressure-card.card-down { background: rgba(0,61,121,0.04); border: 1px solid rgba(0,61,121,0.12); }
+          .pressure-card.card-down { background: rgba(var(--blue-dark-rgb), 0.04); border: 1px solid rgba(var(--blue-dark-rgb), 0.12); }
           .pressure-card.card-down::before { background: linear-gradient(90deg, var(--blue-dark), #4a90d9); }
 
           .pressure-icon { width: 48px; height: 48px; margin: 0 auto var(--space-16); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; }
           .card-up .pressure-icon { background: rgba(232,93,74,0.12); color: #c0392b; }
-          .card-down .pressure-icon { background: rgba(0,61,121,0.08); color: var(--blue-dark); }
+          .card-down .pressure-icon { background: rgba(var(--blue-dark-rgb), 0.08); color: var(--blue-dark); }
           .pressure-icon svg { width: 24px; height: 24px; }
 
           .pressure-stat { font-size: 36px; font-weight: var(--weight-bold); line-height: 1.1; }
@@ -200,7 +200,7 @@
           .result-unit { font-size: var(--font-16); color: #c0392b; font-weight: var(--weight-semibold); margin-top: var(--space-4); }
           .result-right { text-align: left; }
           .result-desc { font-size: var(--font-16); color: #333; line-height: var(--leading-relaxed); }
-          .result-deadline { display: inline-flex; align-items: center; gap: var(--space-8); margin-top: var(--space-14); padding: var(--space-8) var(--space-20); background: rgba(0,61,121,0.06); border-radius: 24px; font-size: var(--font-14); font-weight: var(--weight-semibold); color: var(--blue-dark); }
+          .result-deadline { display: inline-flex; align-items: center; gap: var(--space-8); margin-top: var(--space-14); padding: var(--space-8) var(--space-20); background: rgba(var(--blue-dark-rgb), 0.06); border-radius: 24px; font-size: var(--font-14); font-weight: var(--weight-semibold); color: var(--blue-dark); }
           .result-deadline svg { width: 16px; height: 16px; flex-shrink: 0; }
 
           .pressure-footer { text-align: center; font-size: var(--font-13); color: #aaa; font-style: italic; opacity: 0; }
@@ -213,7 +213,7 @@
           .slide.active .pressure-arrows svg { animation: arrowPulse 1.5s ease-in-out 1.4s infinite; }
           .slide.active .pressure-result { animation: popIn 0.6s cubic-bezier(0.22,1,0.36,1) 1.5s forwards; }
           .slide.active .pressure-footer { animation: fadeIn 0.4s ease 2.0s forwards; }
-            .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
+            .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(var(--blue-primary-rgb), 0.10), rgba(var(--gradient-green-end-rgb), 0.10)); border: 1px solid rgba(var(--blue-primary-rgb), 0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
   </style>
 
         <div class="pressure-layout">
@@ -332,6 +332,11 @@
       <div class="slide-inner">
         <h1 class="slide-title">Aucune alternative ne couvre la cha&icirc;ne compl&egrave;te</h1>
 
+        <style>
+          .comparison-row-ayming { background: linear-gradient(135deg, rgba(var(--blue-dark-rgb), 0.08), rgba(var(--gradient-green-end-rgb), 0.08)); }
+          .comparison-brand { color: var(--blue-dark); }
+        </style>
+
         <div class="table-container">
           <table class="comparison-table">
             <thead>
@@ -367,8 +372,8 @@
                 <td>&#9989; Focus principal</td>
                 <td>&#9888;&#65039; Partiel</td>
               </tr>
-              <tr style="background: linear-gradient(135deg, rgba(0,61,121,0.08), rgba(10,179,140,0.08));">
-                <td><strong style="color: var(--brand-blue, #003d79);">Ayming</strong></td>
+              <tr class="comparison-row-ayming">
+                <td><strong class="comparison-brand">Ayming</strong></td>
                 <td><strong>&#9989; Centralis&eacute;e et contr&ocirc;l&eacute;e</strong></td>
                 <td><strong>&#9989; R&eacute;cup&eacute;ration exhaustive</strong></td>
                 <td><strong>&#9989; Suivi actif jusqu'au versement</strong></td>
@@ -724,7 +729,7 @@
     </section>
 
     <!-- SLIDE 12: OPTIONS - Trois offres (links to individual decks) -->
-    <section class="slide" data-chapter="options" data-slide="12" style="background: var(--bg-light);">
+    <section class="slide options-slide" data-chapter="options" data-slide="12">
       <div class="slide-inner">
         <h1 class="slide-title">Trois offres, un seul parcours</h1>
 
@@ -735,7 +740,7 @@
           .option-card .card-image img { transition: transform 0.4s ease; }
           .option-card .card-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(0,61,121,0.7) 0%, rgba(10,179,140,0.6) 100%);
+            background: linear-gradient(135deg, rgba(var(--blue-dark-rgb), 0.7) 0%, rgba(var(--gradient-green-end-rgb), 0.6) 100%);
             display: flex; align-items: center; justify-content: center;
             opacity: 0; transition: opacity 0.4s ease; border-radius: var(--radius-lg);
           }
@@ -754,9 +759,12 @@
           .chain-badge-1 { background: var(--blue-dark); color: #fff; }
           .chain-badge-2 { background: linear-gradient(135deg, #0057a8, var(--gradient-green-end)); color: #fff; }
           .chain-badge-3 { background: var(--gradient-green-end); color: #fff; }
+          .options-slide { background: var(--bg-light); }
+          .options-row { display: flex; justify-content: center; gap: var(--space-32); width: 100%; max-width: 1050px; }
+          .ancrage-title { text-align: left; margin-bottom: var(--space-28); }
         </style>
 
-        <div style="display: flex; justify-content: center; gap: 32px; width: 100%; max-width: 1050px;">
+        <div class="options-row">
           <!-- Option 1: Collecte -->
           <a href="https://ayming-france.github.io/collecte-et-traitement-des-arrets/" target="_blank" class="option-card">
             <div class="column-card">
@@ -884,7 +892,7 @@
       <div class="slide-inner">
         <div class="ancrage-layout">
           <div class="ancrage-text">
-            <h1 class="slide-title" style="text-align: left; margin-bottom: 28px;">Un fort ancrage <strong>en France</strong>...</h1>
+            <h1 class="slide-title ancrage-title">Un fort ancrage <strong>en France</strong>...</h1>
             <p>Nos &eacute;quipes locales accompagnent au quotidien nos clients dans leur d&eacute;veloppement et leurs transformations <strong>en s'appuyant sur un &eacute;cosyst&egrave;me de professionnels en r&eacute;gions</strong> :</p>
             <p>experts scientifiques, experts comptables, &eacute;tablissements bancaires, p&ocirc;les de comp&eacute;titivit&eacute;, f&eacute;d&eacute;rations professionnelles, avec un maillage de cabinets d'avocats et de m&eacute;decins ind&eacute;pendants.</p>
           </div>
