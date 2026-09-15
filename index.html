@@ -166,44 +166,44 @@
           @keyframes popIn { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
           @keyframes arrowPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
-          .pressure-layout { display: flex; flex-direction: column; align-items: center; gap: 32px; margin: 32px auto 0; max-width: 1000px; }
+          .pressure-layout { display: flex; flex-direction: column; align-items: center; gap: var(--space-32); margin: var(--space-32) auto 0; max-width: 1000px; }
 
           /* Three pressure cards in a row */
-          .pressure-cards { display: flex; gap: 28px; width: 100%; }
-          .pressure-card { flex: 1; border-radius: 16px; padding: 28px 24px; text-align: center; position: relative; overflow: hidden; opacity: 0; }
+          .pressure-cards { display: flex; gap: var(--space-28); width: 100%; }
+          .pressure-card { flex: 1; border-radius: var(--radius-xl); padding: var(--space-28) var(--space-24); text-align: center; position: relative; overflow: hidden; opacity: 0; }
           .pressure-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
 
           .pressure-card.card-up { background: rgba(232,93,74,0.06); border: 1px solid rgba(232,93,74,0.15); }
           .pressure-card.card-up::before { background: linear-gradient(90deg, #e85d4a, #c0392b); }
           .pressure-card.card-down { background: rgba(0,61,121,0.04); border: 1px solid rgba(0,61,121,0.12); }
-          .pressure-card.card-down::before { background: linear-gradient(90deg, #003d79, #4a90d9); }
+          .pressure-card.card-down::before { background: linear-gradient(90deg, var(--blue-dark), #4a90d9); }
 
-          .pressure-icon { width: 48px; height: 48px; margin: 0 auto 16px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+          .pressure-icon { width: 48px; height: 48px; margin: 0 auto var(--space-16); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; }
           .card-up .pressure-icon { background: rgba(232,93,74,0.12); color: #c0392b; }
-          .card-down .pressure-icon { background: rgba(0,61,121,0.08); color: #003d79; }
+          .card-down .pressure-icon { background: rgba(0,61,121,0.08); color: var(--blue-dark); }
           .pressure-icon svg { width: 24px; height: 24px; }
 
-          .pressure-stat { font-size: 36px; font-weight: 700; line-height: 1.1; }
+          .pressure-stat { font-size: 36px; font-weight: var(--weight-bold); line-height: 1.1; }
           .card-up .pressure-stat { color: #c0392b; }
-          .card-down .pressure-stat { color: #003d79; }
-          .pressure-label { font-size: 15px; color: #555; margin-top: 8px; line-height: 1.4; }
-          .pressure-detail { font-size: 13px; color: #999; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.06); }
+          .card-down .pressure-stat { color: var(--blue-dark); }
+          .pressure-label { font-size: var(--font-15); color: #555; margin-top: var(--space-8); line-height: 1.4; }
+          .pressure-detail { font-size: var(--font-13); color: #999; margin-top: var(--space-10); padding-top: var(--space-10); border-top: 1px solid rgba(0,0,0,0.06); }
 
           /* Converging arrows */
-          .pressure-arrows { display: flex; align-items: center; justify-content: center; gap: 12px; opacity: 0; }
+          .pressure-arrows { display: flex; align-items: center; justify-content: center; gap: var(--space-12); opacity: 0; }
           .pressure-arrows svg { width: 32px; height: 32px; color: #c0392b; }
 
           /* Result block */
-          .pressure-result { display: flex; align-items: center; gap: 40px; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); border-radius: 20px; padding: 32px 48px; border: 2px solid rgba(192,57,43,0.15); box-shadow: 0 8px 32px rgba(192,57,43,0.08); opacity: 0; width: 100%; max-width: 800px; }
+          .pressure-result { display: flex; align-items: center; gap: 40px; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); border-radius: var(--radius-2xl); padding: var(--space-32) 48px; border: 2px solid rgba(192,57,43,0.15); box-shadow: 0 8px 32px rgba(192,57,43,0.08); opacity: 0; width: 100%; max-width: 800px; }
           .result-left { text-align: center; flex-shrink: 0; }
-          .result-amount { font-size: 56px; font-weight: 700; color: #c0392b; line-height: 1; }
-          .result-unit { font-size: 16px; color: #c0392b; font-weight: 600; margin-top: 4px; }
+          .result-amount { font-size: 56px; font-weight: var(--weight-bold); color: #c0392b; line-height: var(--leading-tight); }
+          .result-unit { font-size: var(--font-16); color: #c0392b; font-weight: var(--weight-semibold); margin-top: var(--space-4); }
           .result-right { text-align: left; }
-          .result-desc { font-size: 16px; color: #333; line-height: 1.6; }
-          .result-deadline { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 8px 20px; background: rgba(0,61,121,0.06); border-radius: 24px; font-size: 14px; font-weight: 600; color: #003d79; }
+          .result-desc { font-size: var(--font-16); color: #333; line-height: var(--leading-relaxed); }
+          .result-deadline { display: inline-flex; align-items: center; gap: var(--space-8); margin-top: var(--space-14); padding: var(--space-8) var(--space-20); background: rgba(0,61,121,0.06); border-radius: 24px; font-size: var(--font-14); font-weight: var(--weight-semibold); color: var(--blue-dark); }
           .result-deadline svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-          .pressure-footer { text-align: center; font-size: 13px; color: #aaa; font-style: italic; opacity: 0; }
+          .pressure-footer { text-align: center; font-size: var(--font-13); color: #aaa; font-style: italic; opacity: 0; }
 
           /* Animations */
           .slide.active .pressure-card:nth-child(1) { animation: slideUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.2s forwards; }
@@ -213,7 +213,7 @@
           .slide.active .pressure-arrows svg { animation: arrowPulse 1.5s ease-in-out 1.4s infinite; }
           .slide.active .pressure-result { animation: popIn 0.6s cubic-bezier(0.22,1,0.36,1) 1.5s forwards; }
           .slide.active .pressure-footer { animation: fadeIn 0.4s ease 2.0s forwards; }
-            .next-step { margin-top: 34px; padding: 18px 26px; border-radius: 14px; background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: 18px; font-weight: 700; color: #00456d; text-align: center; }
+            .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
   </style>
 
         <div class="pressure-layout">
@@ -482,23 +482,23 @@
         <h1 class="slide-title">Trois maillons, un seul parcours</h1>
 
         <style>
-          .chain-journey { display: flex; align-items: stretch; gap: 0; width: 100%; max-width: 1100px; margin: 32px auto 0; }
-          .chain-link { flex: 1; padding: 36px 28px; position: relative; text-align: center; }
-          .chain-link:first-child { border-radius: 16px 0 0 16px; }
-          .chain-link:last-child { border-radius: 0 16px 16px 0; }
-          .chain-link-1 { background: linear-gradient(135deg, #003d79 0%, #0057a8 100%); color: #fff; }
-          .chain-link-2 { background: linear-gradient(135deg, #0057a8 0%, #0ab38c 100%); color: #fff; }
-          .chain-link-3 { background: linear-gradient(135deg, #0ab38c 0%, #07c99a 100%); color: #fff; }
-          .chain-number { font-size: 48px; font-weight: 700; opacity: 0.25; line-height: 1; margin-bottom: 8px; }
-          .chain-verb { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; opacity: 0.7; margin-bottom: 8px; }
-          .chain-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
-          .chain-desc { font-size: 14px; opacity: 0.85; line-height: 1.5; }
-          .chain-offer { font-size: 11px; opacity: 0.6; margin-top: 16px; font-style: italic; }
+          .chain-journey { display: flex; align-items: stretch; gap: 0; width: 100%; max-width: 1100px; margin: var(--space-32) auto 0; }
+          .chain-link { flex: 1; padding: 36px var(--space-28); position: relative; text-align: center; }
+          .chain-link:first-child { border-radius: var(--radius-xl) 0 0 var(--radius-xl); }
+          .chain-link:last-child { border-radius: 0 var(--radius-xl) var(--radius-xl) 0; }
+          .chain-link-1 { background: linear-gradient(135deg, var(--blue-dark) 0%, #0057a8 100%); color: #fff; }
+          .chain-link-2 { background: linear-gradient(135deg, #0057a8 0%, var(--gradient-green-end) 100%); color: #fff; }
+          .chain-link-3 { background: linear-gradient(135deg, var(--gradient-green-end) 0%, #07c99a 100%); color: #fff; }
+          .chain-number { font-size: 48px; font-weight: var(--weight-bold); opacity: 0.25; line-height: var(--leading-tight); margin-bottom: var(--space-8); }
+          .chain-verb { font-size: var(--font-12); text-transform: uppercase; letter-spacing: 3px; opacity: 0.7; margin-bottom: var(--space-8); }
+          .chain-title { font-size: 20px; font-weight: var(--weight-bold); margin-bottom: var(--space-12); line-height: var(--leading-snug); }
+          .chain-desc { font-size: var(--font-14); opacity: 0.85; line-height: var(--leading-normal); }
+          .chain-offer { font-size: var(--font-11); opacity: 0.6; margin-top: var(--space-16); font-style: italic; }
           .chain-arrow { display: flex; align-items: center; font-size: 28px; color: #fff; margin: 0 -14px; z-index: 2; position: relative; }
           .chain-arrow svg { width: 28px; height: 28px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-          .chain-footer { text-align: center; margin-top: 32px; max-width: 700px; margin-left: auto; margin-right: auto; }
-          .chain-footer p { font-size: 16px; color: #555; line-height: 1.6; }
-          .chain-footer strong { color: #003d79; }
+          .chain-footer { text-align: center; margin-top: var(--space-32); max-width: 700px; margin-left: auto; margin-right: auto; }
+          .chain-footer p { font-size: var(--font-16); color: #555; line-height: var(--leading-relaxed); }
+          .chain-footer strong { color: var(--blue-dark); }
         </style>
 
         <div class="chain-journey">
@@ -729,31 +729,31 @@
         <h1 class="slide-title">Trois offres, un seul parcours</h1>
 
         <style>
-          .option-card { text-decoration: none; color: inherit; flex: 1; max-width: 320px; border-radius: 16px; }
+          .option-card { text-decoration: none; color: inherit; flex: 1; max-width: 320px; border-radius: var(--radius-xl); }
           .option-card .column-card { cursor: pointer; }
-          .option-card .card-image { position: relative; overflow: hidden; border-radius: 12px; }
+          .option-card .card-image { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
           .option-card .card-image img { transition: transform 0.4s ease; }
           .option-card .card-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(135deg, rgba(0,61,121,0.7) 0%, rgba(10,179,140,0.6) 100%);
             display: flex; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.4s ease; border-radius: 12px;
+            opacity: 0; transition: opacity 0.4s ease; border-radius: var(--radius-lg);
           }
           .option-card .card-overlay span {
-            color: #fff; font-size: 14px; font-weight: 600;
-            padding: 10px 24px; border: 2px solid #fff; border-radius: 30px;
+            color: #fff; font-size: var(--font-14); font-weight: var(--weight-semibold);
+            padding: var(--space-10) var(--space-24); border: 2px solid #fff; border-radius: var(--radius-30);
             letter-spacing: 0.5px; transition: background 0.3s ease;
           }
           .option-card:hover .card-overlay { opacity: 1; }
           .option-card:hover .card-image img { transform: scale(1.05); }
           .option-card:hover .card-overlay span { background: rgba(255,255,255,0.15); }
           .option-card .chain-badge {
-            display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px;
-            font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;
+            display: inline-block; padding: var(--space-4) var(--space-12); border-radius: var(--radius-2xl); font-size: var(--font-11);
+            font-weight: var(--weight-bold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: var(--space-8);
           }
-          .chain-badge-1 { background: #003d79; color: #fff; }
-          .chain-badge-2 { background: linear-gradient(135deg, #0057a8, #0ab38c); color: #fff; }
-          .chain-badge-3 { background: #0ab38c; color: #fff; }
+          .chain-badge-1 { background: var(--blue-dark); color: #fff; }
+          .chain-badge-2 { background: linear-gradient(135deg, #0057a8, var(--gradient-green-end)); color: #fff; }
+          .chain-badge-3 { background: var(--gradient-green-end); color: #fff; }
         </style>
 
         <div style="display: flex; justify-content: center; gap: 32px; width: 100%; max-width: 1050px;">
